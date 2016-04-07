@@ -1,0 +1,21 @@
+{
+  "coverage": "11.11%",
+  "expectCount": 9,
+  "actualCount": 1,
+  "files": {
+    "js/husl_harmony.js": {
+      "expectCount": 9,
+      "actualCount": 1,
+      "undocumentLines": [
+        44,
+        37,
+        93,
+        59,
+        110,
+        12,
+        30,
+        104
+      ]
+    }
+  }
+}

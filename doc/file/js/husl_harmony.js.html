@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">js/husl_harmony.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/StoneCypher/husl_harmony" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-from_rgb">from_rgb</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hsl_interval_to_rgb">hsl_interval_to_rgb</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-make_all_swatches">make_all_swatches</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-make_swatches">make_swatches</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-many_matches">many_matches</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate">rotate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-usort">usort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-husl">husl</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-presets">presets</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">js/husl_harmony.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+&apos;use strict&apos;;
+
+/*********
+ *
+ *  `husl_harmony` is a color harmony generator using [husl](https://www.npmjs.com/package/husl).  `husl_harmony` can generate 
+ *
+ */
+
+var husl = require(&apos;husl&apos;);
+
+var presets = {
+  &apos;monochromatic&apos;          : [   0                                     ],
+  &apos;complementary&apos;          : [   0,  180                               ],
+  &apos;split-complementary&apos;    : [   0,  150,  210                         ],
+  &apos;double-complementary&apos;   : [   0,   30,  180,  210                   ],
+  &apos;l-double-complementary&apos; : [   0,  330,  180,  150                   ],
+  &apos;triad&apos;                  : [   0,  120,  240                         ],
+  &apos;square&apos;                 : [   0,   90,  180,  270                   ],
+  &apos;tetrad&apos;                 : [   0,   60,  180,  240                   ],
+  &apos;l-tetrad&apos;               : [   0,  300,  180,  120                   ],
+  &apos;analogous&apos;              : [ 300,  330,    0,   30,   60             ],
+  &apos;analogous-3&apos;            : [ 330,    0,   30                         ],
+  &apos;analogous-5&apos;            : [ 300,  330,    0,   30,   60             ],
+  &apos;analogous-7&apos;            : [ 270,  300,  330,    0,   30,   60,   90 ]
+}; 
+
+
+
+function rotate(HSL, angle) {
+  var [H,S,L] = HSL;
+  return [(H + angle) % 360, S, L];
+}
+
+
+
+function hsl_interval_to_rgb(hi) {
+  var [Ho, So, Lo] = hi; // they&apos;re all [0..1]; husl needs 360, 100, 100
+  return husl.toHex(Ho, So, Lo);
+}
+
+
+
+function from_rgb(hex6_color, harmony) {
+
+  if (hex6_color.length === 6) { hex6_color = &apos;#&apos; + hex6_color; }
+
+  if (typeof harmony === &apos;string&apos;) { 
+    harmony = presets[harmony]; 
+    if (harmony === undefined) { throw &apos;no such preset&apos;; } 
+  }
+
+  return harmony.map(angle =&gt; angle? hsl_interval_to_rgb( rotate(husl.fromHex(hex6_color), angle) ) : hex6_color )
+
+}
+
+
+
+function make_swatches(name, colors, size = &apos;4em&apos;) {
+
+  var div   = document.createElement(&apos;div&apos;),
+      head  = document.createElement(&apos;span&apos;),
+      table = document.createElement(&apos;table&apos;),
+      tbody = document.createElement(&apos;tbody&apos;),
+      row   = document.createElement(&apos;tr&apos;);
+
+  head.innerHTML         = name;
+  table.style.border     = &apos;1px solid black&apos;;
+  div.style.marginBottom = &apos;1em&apos;;
+
+  colors.map(function(color) {
+
+    var cell   = document.createElement(&apos;td&apos;),
+        styles = { width: size, height: size, backgroundColor: color };
+
+    Object.keys(styles).map(key =&gt; cell.style[key] = styles[key]);
+
+    row.appendChild(cell);
+
+  });
+
+  tbody.appendChild(row);
+  table.appendChild(tbody);
+  div.appendChild(head);
+  div.appendChild(table);
+
+  return div;
+
+}
+
+
+
+function make_all_swatches(color) {
+
+  var result = document.createElement(&apos;div&apos;);
+  for (var key in presets) { result.appendChild(make_swatches(key, from_rgb(color || &apos;0088ff&apos;, key))); } 
+
+  return result;
+
+}
+
+
+
+function usort(uarray) {
+  return uarray.filter( (value, index, self) =&gt; self.indexOf(value) === index );
+}
+
+
+
+function many_matches(color) {
+  return usort( [].concat.apply([], [&apos;analogous&apos;, &apos;square&apos;].map(scheme =&gt; from_rgb(color || &apos;0088ff&apos;, scheme)) ) );
+}
+
+
+
+export {rotate, from_rgb, presets, husl, hsl_interval_to_rgb, make_swatches, make_all_swatches, usort, many_matches};
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
