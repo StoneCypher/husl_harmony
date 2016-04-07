@@ -10,19 +10,20 @@
 var husl = require('husl');
 
 var presets = {
-  'monochromatic'          : [   0                                     ],
-  'complementary'          : [   0,  180                               ],
-  'split-complementary'    : [   0,  150,  210                         ],
-  'double-complementary'   : [   0,   30,  180,  210                   ],
-  'l-double-complementary' : [   0,  330,  180,  150                   ],
-  'triad'                  : [   0,  120,  240                         ],
-  'square'                 : [   0,   90,  180,  270                   ],
-  'tetrad'                 : [   0,   60,  180,  240                   ],
-  'l-tetrad'               : [   0,  300,  180,  120                   ],
-  'analogous'              : [ 300,  330,    0,   30,   60             ],
-  'analogous-3'            : [ 330,    0,   30                         ],
-  'analogous-5'            : [ 300,  330,    0,   30,   60             ],
-  'analogous-7'            : [ 270,  300,  330,    0,   30,   60,   90 ]
+  'monochromatic'           : [   0                                     ],
+  'complementary'           : [   0,  180                               ],
+  'split-complementary'     : [   0,  150,  210                         ],
+  'double-complementary'    : [   0,   30,  180,  210                   ],
+  'l-double-complementary'  : [   0,  330,  180,  150                   ],
+  'triad'                   : [   0,  120,  240                         ],
+  'complementary-triad'     : [   0,  120,  180,  240                   ],
+  'square'                  : [   0,   90,  180,  270                   ],
+  'tetrad'                  : [   0,   60,  180,  240                   ],
+  'l-tetrad'                : [   0,  300,  180,  120                   ],
+  'analogous-3'             : [ 330,    0,   30                         ],
+  'analogous-5'             : [ 300,  330,    0,   30,   60             ],
+  'analogous-7'             : [ 270,  300,  330,    0,   30,   60,   90 ],
+  'complementary-analogous' : [ 0,    120,  150,  180,  210,  240       ]
 }; 
 
 
@@ -66,6 +67,7 @@ function make_swatches(name, colors, size = '4em') {
 
   head.innerHTML         = name;
   table.style.border     = '1px solid black';
+  table.style.marginTop  = '1px solid black';
   div.style.marginBottom = '1em';
 
   colors.map(function(color) {
@@ -107,10 +109,16 @@ function usort(uarray) {
 
 
 
-function many_matches(color) {
-  return usort( [].concat.apply([], ['analogous', 'square'].map(scheme => from_rgb(color || '0088ff', scheme)) ) );
+function many_matches(color, usage_presets = ['analogous', 'square']) {
+  return usort( [].concat.apply([], usage_presets.map(scheme => from_rgb(color || '0088ff', scheme)) ) );
 }
 
 
 
-export {rotate, from_rgb, presets, husl, hsl_interval_to_rgb, make_swatches, make_all_swatches, usort, many_matches};
+function many_swatches(color, usage_presets) {
+  return make_swatches(`Many matches of <span style="display:inline-block;background-color:${color};width:0.85em;height:0.85em;overflow:hidden;border:1px solid black;margin:0 0.1em -0.15em 0.1em">&nbsp;<tt> ${color}</tt></span>`, many_matches(color, usage_presets));
+}
+
+
+
+export {rotate, from_rgb, presets, husl, hsl_interval_to_rgb, make_swatches, make_all_swatches, usort, many_matches, many_swatches};

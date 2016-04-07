@@ -23,7 +23,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\r\n'use strict';\r\n\r\n/*********\r\n *\r\n *  `husl_harmony` is a color harmony generator using [husl](https://www.npmjs.com/package/husl).  `husl_harmony` can generate \r\n *\r\n */\r\n\r\nvar husl = require('husl');\r\n\r\nvar presets = {\r\n  'monochromatic'          : [   0                                     ],\r\n  'complementary'          : [   0,  180                               ],\r\n  'split-complementary'    : [   0,  150,  210                         ],\r\n  'double-complementary'   : [   0,   30,  180,  210                   ],\r\n  'l-double-complementary' : [   0,  330,  180,  150                   ],\r\n  'triad'                  : [   0,  120,  240                         ],\r\n  'square'                 : [   0,   90,  180,  270                   ],\r\n  'tetrad'                 : [   0,   60,  180,  240                   ],\r\n  'l-tetrad'               : [   0,  300,  180,  120                   ],\r\n  'analogous'              : [ 300,  330,    0,   30,   60             ],\r\n  'analogous-3'            : [ 330,    0,   30                         ],\r\n  'analogous-5'            : [ 300,  330,    0,   30,   60             ],\r\n  'analogous-7'            : [ 270,  300,  330,    0,   30,   60,   90 ]\r\n}; \r\n\r\n\r\n\r\nfunction rotate(HSL, angle) {\r\n  var [H,S,L] = HSL;\r\n  return [(H + angle) % 360, S, L];\r\n}\r\n\r\n\r\n\r\nfunction hsl_interval_to_rgb(hi) {\r\n  var [Ho, So, Lo] = hi; // they're all [0..1]; husl needs 360, 100, 100\r\n  return husl.toHex(Ho, So, Lo);\r\n}\r\n\r\n\r\n\r\nfunction from_rgb(hex6_color, harmony) {\r\n\r\n  if (hex6_color.length === 6) { hex6_color = '#' + hex6_color; }\r\n\r\n  if (typeof harmony === 'string') { \r\n    harmony = presets[harmony]; \r\n    if (harmony === undefined) { throw 'no such preset'; } \r\n  }\r\n\r\n  return harmony.map(angle => angle? hsl_interval_to_rgb( rotate(husl.fromHex(hex6_color), angle) ) : hex6_color )\r\n\r\n}\r\n\r\n\r\n\r\nfunction make_swatches(name, colors, size = '4em') {\r\n\r\n  var div   = document.createElement('div'),\r\n      head  = document.createElement('span'),\r\n      table = document.createElement('table'),\r\n      tbody = document.createElement('tbody'),\r\n      row   = document.createElement('tr');\r\n\r\n  head.innerHTML         = name;\r\n  table.style.border     = '1px solid black';\r\n  div.style.marginBottom = '1em';\r\n\r\n  colors.map(function(color) {\r\n\r\n    var cell   = document.createElement('td'),\r\n        styles = { width: size, height: size, backgroundColor: color };\r\n\r\n    Object.keys(styles).map(key => cell.style[key] = styles[key]);\r\n\r\n    row.appendChild(cell);\r\n\r\n  });\r\n\r\n  tbody.appendChild(row);\r\n  table.appendChild(tbody);\r\n  div.appendChild(head);\r\n  div.appendChild(table);\r\n\r\n  return div;\r\n\r\n}\r\n\r\n\r\n\r\nfunction make_all_swatches(color) {\r\n\r\n  var result = document.createElement('div');\r\n  for (var key in presets) { result.appendChild(make_swatches(key, from_rgb(color || '0088ff', key))); } \r\n\r\n  return result;\r\n\r\n}\r\n\r\n\r\n\r\nfunction usort(uarray) {\r\n  return uarray.filter( (value, index, self) => self.indexOf(value) === index );\r\n}\r\n\r\n\r\n\r\nfunction many_matches(color) {\r\n  return usort( [].concat.apply([], ['analogous', 'square'].map(scheme => from_rgb(color || '0088ff', scheme)) ) );\r\n}\r\n\r\n\r\n\r\nexport {rotate, from_rgb, presets, husl, hsl_interval_to_rgb, make_swatches, make_all_swatches, usort, many_matches};\r\n"
+    "content": "\r\n'use strict';\r\n\r\n/*********\r\n *\r\n *  `husl_harmony` is a color harmony generator using [husl](https://www.npmjs.com/package/husl).  `husl_harmony` can generate \r\n *\r\n */\r\n\r\nvar husl = require('husl');\r\n\r\nvar presets = {\r\n  'monochromatic'           : [   0                                     ],\r\n  'complementary'           : [   0,  180                               ],\r\n  'split-complementary'     : [   0,  150,  210                         ],\r\n  'double-complementary'    : [   0,   30,  180,  210                   ],\r\n  'l-double-complementary'  : [   0,  330,  180,  150                   ],\r\n  'triad'                   : [   0,  120,  240                         ],\r\n  'complementary-triad'     : [   0,  120,  180,  240                   ],\r\n  'square'                  : [   0,   90,  180,  270                   ],\r\n  'tetrad'                  : [   0,   60,  180,  240                   ],\r\n  'l-tetrad'                : [   0,  300,  180,  120                   ],\r\n  'analogous-3'             : [ 330,    0,   30                         ],\r\n  'analogous-5'             : [ 300,  330,    0,   30,   60             ],\r\n  'analogous-7'             : [ 270,  300,  330,    0,   30,   60,   90 ],\r\n  'complementary-analogous' : [ 0,    120,  150,  180,  210,  240       ]\r\n}; \r\n\r\n\r\n\r\nfunction rotate(HSL, angle) {\r\n  var [H,S,L] = HSL;\r\n  return [(H + angle) % 360, S, L];\r\n}\r\n\r\n\r\n\r\nfunction hsl_interval_to_rgb(hi) {\r\n  var [Ho, So, Lo] = hi; // they're all [0..1]; husl needs 360, 100, 100\r\n  return husl.toHex(Ho, So, Lo);\r\n}\r\n\r\n\r\n\r\nfunction from_rgb(hex6_color, harmony) {\r\n\r\n  if (hex6_color.length === 6) { hex6_color = '#' + hex6_color; }\r\n\r\n  if (typeof harmony === 'string') { \r\n    harmony = presets[harmony]; \r\n    if (harmony === undefined) { throw 'no such preset'; } \r\n  }\r\n\r\n  return harmony.map(angle => angle? hsl_interval_to_rgb( rotate(husl.fromHex(hex6_color), angle) ) : hex6_color )\r\n\r\n}\r\n\r\n\r\n\r\nfunction make_swatches(name, colors, size = '4em') {\r\n\r\n  var div   = document.createElement('div'),\r\n      head  = document.createElement('span'),\r\n      table = document.createElement('table'),\r\n      tbody = document.createElement('tbody'),\r\n      row   = document.createElement('tr');\r\n\r\n  head.innerHTML         = name;\r\n  table.style.border     = '1px solid black';\r\n  table.style.marginTop  = '1px solid black';\r\n  div.style.marginBottom = '1em';\r\n\r\n  colors.map(function(color) {\r\n\r\n    var cell   = document.createElement('td'),\r\n        styles = { width: size, height: size, backgroundColor: color };\r\n\r\n    Object.keys(styles).map(key => cell.style[key] = styles[key]);\r\n\r\n    row.appendChild(cell);\r\n\r\n  });\r\n\r\n  tbody.appendChild(row);\r\n  table.appendChild(tbody);\r\n  div.appendChild(head);\r\n  div.appendChild(table);\r\n\r\n  return div;\r\n\r\n}\r\n\r\n\r\n\r\nfunction make_all_swatches(color) {\r\n\r\n  var result = document.createElement('div');\r\n  for (var key in presets) { result.appendChild(make_swatches(key, from_rgb(color || '0088ff', key))); } \r\n\r\n  return result;\r\n\r\n}\r\n\r\n\r\n\r\nfunction usort(uarray) {\r\n  return uarray.filter( (value, index, self) => self.indexOf(value) === index );\r\n}\r\n\r\n\r\n\r\nfunction many_matches(color, usage_presets = ['analogous', 'square']) {\r\n  return usort( [].concat.apply([], usage_presets.map(scheme => from_rgb(color || '0088ff', scheme)) ) );\r\n}\r\n\r\n\r\n\r\nfunction many_swatches(color, usage_presets) {\r\n  return make_swatches(`Many matches of <span style=\"display:inline-block;background-color:${color};width:0.85em;height:0.85em;overflow:hidden;border:1px solid black;margin:0 0.1em -0.15em 0.1em\">&nbsp;<tt> ${color}</tt></span>`, many_matches(color, usage_presets));\r\n}\r\n\r\n\r\n\r\nexport {rotate, from_rgb, presets, husl, hsl_interval_to_rgb, make_swatches, make_all_swatches, usort, many_matches, many_swatches};\r\n"
   },
   {
     "__docId__": 2,
@@ -38,7 +38,7 @@
     "importPath": "husl_harmony/js/husl_harmony.js",
     "importStyle": "{rotate}",
     "description": null,
-    "lineNumber": 30,
+    "lineNumber": 31,
     "undocument": true,
     "params": [
       {
@@ -74,7 +74,7 @@
     "importPath": "husl_harmony/js/husl_harmony.js",
     "importStyle": "{from_rgb}",
     "description": null,
-    "lineNumber": 44,
+    "lineNumber": 45,
     "undocument": true,
     "params": [
       {
@@ -151,7 +151,7 @@
     "importPath": "husl_harmony/js/husl_harmony.js",
     "importStyle": "{hsl_interval_to_rgb}",
     "description": null,
-    "lineNumber": 37,
+    "lineNumber": 38,
     "undocument": true,
     "params": [
       {
@@ -181,7 +181,7 @@
     "importPath": "husl_harmony/js/husl_harmony.js",
     "importStyle": "{make_swatches}",
     "description": null,
-    "lineNumber": 59,
+    "lineNumber": 60,
     "undocument": true,
     "params": [
       {
@@ -226,7 +226,7 @@
     "importPath": "husl_harmony/js/husl_harmony.js",
     "importStyle": "{make_all_swatches}",
     "description": null,
-    "lineNumber": 93,
+    "lineNumber": 95,
     "undocument": true,
     "params": [
       {
@@ -256,7 +256,7 @@
     "importPath": "husl_harmony/js/husl_harmony.js",
     "importStyle": "{usort}",
     "description": null,
-    "lineNumber": 104,
+    "lineNumber": 106,
     "undocument": true,
     "params": [
       {
@@ -286,11 +286,59 @@
     "importPath": "husl_harmony/js/husl_harmony.js",
     "importStyle": "{many_matches}",
     "description": null,
-    "lineNumber": 110,
+    "lineNumber": 112,
     "undocument": true,
     "params": [
       {
         "name": "color",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "usage_presets",
+        "optional": true,
+        "types": [
+          "string[]"
+        ],
+        "defaultRaw": [
+          "analogous",
+          "square"
+        ],
+        "defaultValue": "[\"analogous\",\"square\"]"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 11,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "many_swatches",
+    "memberof": "js/husl_harmony.js",
+    "longname": "js/husl_harmony.js~many_swatches",
+    "access": null,
+    "export": true,
+    "importPath": "husl_harmony/js/husl_harmony.js",
+    "importStyle": "{many_swatches}",
+    "description": null,
+    "lineNumber": 118,
+    "undocument": true,
+    "params": [
+      {
+        "name": "color",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "usage_presets",
         "types": [
           "*"
         ]
@@ -304,7 +352,7 @@
     "generator": false
   },
   {
-    "__docId__": 12,
+    "__docId__": 13,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -317,7 +365,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 13,
+    "__docId__": 14,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -330,7 +378,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 14,
+    "__docId__": 15,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -343,7 +391,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 15,
+    "__docId__": 16,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -356,7 +404,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 16,
+    "__docId__": 17,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -369,7 +417,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 17,
+    "__docId__": 18,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -382,7 +430,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 18,
+    "__docId__": 19,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -395,7 +443,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 19,
+    "__docId__": 20,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -408,7 +456,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 20,
+    "__docId__": 21,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -421,7 +469,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 21,
+    "__docId__": 22,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -434,7 +482,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 22,
+    "__docId__": 23,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -447,7 +495,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 23,
+    "__docId__": 24,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -460,7 +508,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 24,
+    "__docId__": 25,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -473,7 +521,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 25,
+    "__docId__": 26,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -486,7 +534,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 26,
+    "__docId__": 27,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -499,7 +547,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 27,
+    "__docId__": 28,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -512,7 +560,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 28,
+    "__docId__": 29,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -525,7 +573,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 29,
+    "__docId__": 30,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -538,7 +586,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 30,
+    "__docId__": 31,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -551,7 +599,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 31,
+    "__docId__": 32,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -564,7 +612,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 32,
+    "__docId__": 33,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -577,7 +625,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 33,
+    "__docId__": 34,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -590,7 +638,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 34,
+    "__docId__": 35,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -603,7 +651,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 35,
+    "__docId__": 36,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -616,7 +664,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 36,
+    "__docId__": 37,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -629,7 +677,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 37,
+    "__docId__": 38,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -642,7 +690,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 38,
+    "__docId__": 39,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -655,7 +703,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 39,
+    "__docId__": 40,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -668,7 +716,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 40,
+    "__docId__": 41,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -681,7 +729,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 41,
+    "__docId__": 42,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -694,7 +742,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 42,
+    "__docId__": 43,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -707,7 +755,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 43,
+    "__docId__": 44,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -720,7 +768,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 44,
+    "__docId__": 45,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -733,7 +781,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 45,
+    "__docId__": 46,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -746,7 +794,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 46,
+    "__docId__": 47,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -759,7 +807,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 47,
+    "__docId__": 48,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -772,7 +820,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 48,
+    "__docId__": 49,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -785,7 +833,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 49,
+    "__docId__": 50,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -798,7 +846,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 50,
+    "__docId__": 51,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -811,7 +859,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 51,
+    "__docId__": 52,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -824,7 +872,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 53,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -837,7 +885,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 53,
+    "__docId__": 54,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -850,7 +898,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 55,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -863,7 +911,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -876,7 +924,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -889,7 +937,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -902,7 +950,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -915,7 +963,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -928,7 +976,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 62,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -941,7 +989,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 63,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -954,7 +1002,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 64,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -967,7 +1015,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 65,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -980,7 +1028,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 66,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -993,7 +1041,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 67,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1006,7 +1054,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 68,
     "kind": "external",
     "static": true,
     "variation": null,

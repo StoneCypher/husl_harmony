@@ -36,6 +36,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "husl_harmony/js/husl_harmony.js~many_swatches",
+    "function/index.html#static-function-many_swatches",
+    "<span>many_swatches</span> <span class=\"search-result-import-path\">husl_harmony/js/husl_harmony.js</span>",
+    "function"
+  ],
+  [
     "husl_harmony/js/husl_harmony.js~presets",
     "variable/index.html#static-variable-presets",
     "<span>presets</span> <span class=\"search-result-import-path\">husl_harmony/js/husl_harmony.js</span>",

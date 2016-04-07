@@ -37,6 +37,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-make_all_swatches">make_all_swatches</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-make_swatches">make_swatches</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-many_matches">many_matches</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-many_swatches">many_swatches</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate">rotate</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-usort">usort</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-husl">husl</a></span></span></li>
@@ -58,19 +59,20 @@
 var husl = require(&apos;husl&apos;);
 
 var presets = {
-  &apos;monochromatic&apos;          : [   0                                     ],
-  &apos;complementary&apos;          : [   0,  180                               ],
-  &apos;split-complementary&apos;    : [   0,  150,  210                         ],
-  &apos;double-complementary&apos;   : [   0,   30,  180,  210                   ],
-  &apos;l-double-complementary&apos; : [   0,  330,  180,  150                   ],
-  &apos;triad&apos;                  : [   0,  120,  240                         ],
-  &apos;square&apos;                 : [   0,   90,  180,  270                   ],
-  &apos;tetrad&apos;                 : [   0,   60,  180,  240                   ],
-  &apos;l-tetrad&apos;               : [   0,  300,  180,  120                   ],
-  &apos;analogous&apos;              : [ 300,  330,    0,   30,   60             ],
-  &apos;analogous-3&apos;            : [ 330,    0,   30                         ],
-  &apos;analogous-5&apos;            : [ 300,  330,    0,   30,   60             ],
-  &apos;analogous-7&apos;            : [ 270,  300,  330,    0,   30,   60,   90 ]
+  &apos;monochromatic&apos;           : [   0                                     ],
+  &apos;complementary&apos;           : [   0,  180                               ],
+  &apos;split-complementary&apos;     : [   0,  150,  210                         ],
+  &apos;double-complementary&apos;    : [   0,   30,  180,  210                   ],
+  &apos;l-double-complementary&apos;  : [   0,  330,  180,  150                   ],
+  &apos;triad&apos;                   : [   0,  120,  240                         ],
+  &apos;complementary-triad&apos;     : [   0,  120,  180,  240                   ],
+  &apos;square&apos;                  : [   0,   90,  180,  270                   ],
+  &apos;tetrad&apos;                  : [   0,   60,  180,  240                   ],
+  &apos;l-tetrad&apos;                : [   0,  300,  180,  120                   ],
+  &apos;analogous-3&apos;             : [ 330,    0,   30                         ],
+  &apos;analogous-5&apos;             : [ 300,  330,    0,   30,   60             ],
+  &apos;analogous-7&apos;             : [ 270,  300,  330,    0,   30,   60,   90 ],
+  &apos;complementary-analogous&apos; : [ 0,    120,  150,  180,  210,  240       ]
 }; 
 
 
@@ -114,6 +116,7 @@ function make_swatches(name, colors, size = &apos;4em&apos;) {
 
   head.innerHTML         = name;
   table.style.border     = &apos;1px solid black&apos;;
+  table.style.marginTop  = &apos;1px solid black&apos;;
   div.style.marginBottom = &apos;1em&apos;;
 
   colors.map(function(color) {
@@ -155,13 +158,19 @@ function usort(uarray) {
 
 
 
-function many_matches(color) {
-  return usort( [].concat.apply([], [&apos;analogous&apos;, &apos;square&apos;].map(scheme =&gt; from_rgb(color || &apos;0088ff&apos;, scheme)) ) );
+function many_matches(color, usage_presets = [&apos;analogous&apos;, &apos;square&apos;]) {
+  return usort( [].concat.apply([], usage_presets.map(scheme =&gt; from_rgb(color || &apos;0088ff&apos;, scheme)) ) );
 }
 
 
 
-export {rotate, from_rgb, presets, husl, hsl_interval_to_rgb, make_swatches, make_all_swatches, usort, many_matches};
+function many_swatches(color, usage_presets) {
+  return make_swatches(`Many matches of &lt;span style=&quot;display:inline-block;background-color:${color};width:0.85em;height:0.85em;overflow:hidden;border:1px solid black;margin:0 0.1em -0.15em 0.1em&quot;&gt;&amp;nbsp;&lt;tt&gt; ${color}&lt;/tt&gt;&lt;/span&gt;`, many_matches(color, usage_presets));
+}
+
+
+
+export {rotate, from_rgb, presets, husl, hsl_interval_to_rgb, make_swatches, make_all_swatches, usort, many_matches, many_swatches};
 </code></pre>
 
 </div>
