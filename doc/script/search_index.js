@@ -390,12 +390,6 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "js/bootstrap.js",
-    "file/js/bootstrap.js.html",
-    "js/bootstrap.js",
-    "file"
-  ],
-  [
     "js/husl_harmony.js",
     "file/js/husl_harmony.js.html",
     "js/husl_harmony.js",
