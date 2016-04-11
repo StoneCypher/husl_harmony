@@ -39,20 +39,23 @@ import {from_rgb} from './husl_harmony.js';
 console.log( from_rgb('#0026FF', 'analogous-7') );
 ```
 
-The result should be `["#005e53", "#005c64", "#00597b", "#0026FF", "#8e00a9", "#9c007e", "#a50051"]`.
+The result should be 
+```
+["#005e53", "#005c64", "#00597b", "#0026FF", "#8e00a9", "#9c007e", "#a50051"]
+```
 
 ## ES5 Usage
 
 ```javascript
-// assumes you've added to your html
-// &lt;script type="text/javascript" src="husl_harmony.es5.browserified.js">&lt;/script>
 // see dist/index.html for a working example
-
 var hh = require('husl_harmony');
 console.log( hh.from_rgb('#0026FF', 'analogous-7') );
 ```
 
-The result should be `["#005e53", "#005c64", "#00597b", "#0026FF", "#8e00a9", "#9c007e", "#a50051"]`.
+The result should be 
+```javascript
+["#005e53", "#005c64", "#00597b", "#0026FF", "#8e00a9", "#9c007e", "#a50051"]
+```
 
 ## Harmonies
 
