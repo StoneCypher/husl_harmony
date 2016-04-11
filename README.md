@@ -40,7 +40,8 @@ console.log( from_rgb('#0026FF', 'analogous-7') );
 ```
 
 The result should be 
-```
+
+```javascript
 ["#005e53", "#005c64", "#00597b", "#0026FF", "#8e00a9", "#9c007e", "#a50051"]
 ```
 
@@ -53,6 +54,7 @@ console.log( hh.from_rgb('#0026FF', 'analogous-7') );
 ```
 
 The result should be 
+
 ```javascript
 ["#005e53", "#005c64", "#00597b", "#0026FF", "#8e00a9", "#9c007e", "#a50051"]
 ```
