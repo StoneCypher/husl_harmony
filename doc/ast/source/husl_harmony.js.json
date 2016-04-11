@@ -1283,8 +1283,8 @@
                 "type": "Property",
                 "key": {
                   "type": "Literal",
-                  "value": "pentagon",
-                  "raw": "'pentagon'",
+                  "value": "l-tetrad",
+                  "raw": "'l-tetrad'",
                   "range": [
                     913,
                     923
@@ -1324,16 +1324,16 @@
                     },
                     {
                       "type": "Literal",
-                      "value": 72,
-                      "raw": "72",
+                      "value": 300,
+                      "raw": "300",
                       "range": [
-                        950,
+                        949,
                         952
                       ],
                       "loc": {
                         "start": {
                           "line": 24,
-                          "column": 39
+                          "column": 38
                         },
                         "end": {
                           "line": 24,
@@ -1343,8 +1343,8 @@
                     },
                     {
                       "type": "Literal",
-                      "value": 144,
-                      "raw": "144",
+                      "value": 180,
+                      "raw": "180",
                       "range": [
                         955,
                         958
@@ -1362,8 +1362,8 @@
                     },
                     {
                       "type": "Literal",
-                      "value": 216,
-                      "raw": "216",
+                      "value": 120,
+                      "raw": "120",
                       "range": [
                         961,
                         964
@@ -1376,25 +1376,6 @@
                         "end": {
                           "line": 24,
                           "column": 53
-                        }
-                      }
-                    },
-                    {
-                      "type": "Literal",
-                      "value": 288,
-                      "raw": "288",
-                      "range": [
-                        967,
-                        970
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 24,
-                          "column": 56
-                        },
-                        "end": {
-                          "line": 24,
-                          "column": 59
                         }
                       }
                     }
@@ -1437,11 +1418,11 @@
                 "type": "Property",
                 "key": {
                   "type": "Literal",
-                  "value": "hexagon",
-                  "raw": "'hexagon'",
+                  "value": "pentagon",
+                  "raw": "'pentagon'",
                   "range": [
                     989,
-                    998
+                    999
                   ],
                   "loc": {
                     "start": {
@@ -1450,7 +1431,7 @@
                     },
                     "end": {
                       "line": 25,
-                      "column": 11
+                      "column": 12
                     }
                   }
                 },
@@ -1478,8 +1459,8 @@
                     },
                     {
                       "type": "Literal",
-                      "value": 60,
-                      "raw": "60",
+                      "value": 72,
+                      "raw": "72",
                       "range": [
                         1026,
                         1028
@@ -1497,8 +1478,8 @@
                     },
                     {
                       "type": "Literal",
-                      "value": 120,
-                      "raw": "120",
+                      "value": 144,
+                      "raw": "144",
                       "range": [
                         1031,
                         1034
@@ -1516,8 +1497,8 @@
                     },
                     {
                       "type": "Literal",
-                      "value": 180,
-                      "raw": "180",
+                      "value": 216,
+                      "raw": "216",
                       "range": [
                         1037,
                         1040
@@ -1535,8 +1516,8 @@
                     },
                     {
                       "type": "Literal",
-                      "value": 240,
-                      "raw": "240",
+                      "value": 288,
+                      "raw": "288",
                       "range": [
                         1043,
                         1046
@@ -1549,25 +1530,6 @@
                         "end": {
                           "line": 25,
                           "column": 59
-                        }
-                      }
-                    },
-                    {
-                      "type": "Literal",
-                      "value": 300,
-                      "raw": "300",
-                      "range": [
-                        1049,
-                        1052
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 25,
-                          "column": 62
-                        },
-                        "end": {
-                          "line": 25,
-                          "column": 65
                         }
                       }
                     }
@@ -1610,11 +1572,11 @@
                 "type": "Property",
                 "key": {
                   "type": "Literal",
-                  "value": "l-tetrad",
-                  "raw": "'l-tetrad'",
+                  "value": "hexagon",
+                  "raw": "'hexagon'",
                   "range": [
                     1065,
-                    1075
+                    1074
                   ],
                   "loc": {
                     "start": {
@@ -1623,7 +1585,7 @@
                     },
                     "end": {
                       "line": 26,
-                      "column": 12
+                      "column": 11
                     }
                   }
                 },
@@ -1651,16 +1613,16 @@
                     },
                     {
                       "type": "Literal",
-                      "value": 300,
-                      "raw": "300",
+                      "value": 60,
+                      "raw": "60",
                       "range": [
-                        1101,
+                        1102,
                         1104
                       ],
                       "loc": {
                         "start": {
                           "line": 26,
-                          "column": 38
+                          "column": 39
                         },
                         "end": {
                           "line": 26,
@@ -1670,8 +1632,8 @@
                     },
                     {
                       "type": "Literal",
-                      "value": 180,
-                      "raw": "180",
+                      "value": 120,
+                      "raw": "120",
                       "range": [
                         1107,
                         1110
@@ -1689,8 +1651,8 @@
                     },
                     {
                       "type": "Literal",
-                      "value": 120,
-                      "raw": "120",
+                      "value": 180,
+                      "raw": "180",
                       "range": [
                         1113,
                         1116
@@ -1703,6 +1665,44 @@
                         "end": {
                           "line": 26,
                           "column": 53
+                        }
+                      }
+                    },
+                    {
+                      "type": "Literal",
+                      "value": 240,
+                      "raw": "240",
+                      "range": [
+                        1119,
+                        1122
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 26,
+                          "column": 56
+                        },
+                        "end": {
+                          "line": 26,
+                          "column": 59
+                        }
+                      }
+                    },
+                    {
+                      "type": "Literal",
+                      "value": 300,
+                      "raw": "300",
+                      "range": [
+                        1125,
+                        1128
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 26,
+                          "column": 62
+                        },
+                        "end": {
+                          "line": 26,
+                          "column": 65
                         }
                       }
                     }
@@ -8119,11 +8119,11 @@
             "elements": [
               {
                 "type": "Literal",
-                "value": "analogous",
-                "raw": "'analogous'",
+                "value": "analogous-5",
+                "raw": "'analogous-5'",
                 "range": [
                   3333,
-                  3344
+                  3346
                 ],
                 "loc": {
                   "start": {
@@ -8132,7 +8132,7 @@
                   },
                   "end": {
                     "line": 116,
-                    "column": 57
+                    "column": 59
                   }
                 }
               },
@@ -8141,24 +8141,24 @@
                 "value": "square",
                 "raw": "'square'",
                 "range": [
-                  3346,
-                  3354
+                  3348,
+                  3356
                 ],
                 "loc": {
                   "start": {
                     "line": 116,
-                    "column": 59
+                    "column": 61
                   },
                   "end": {
                     "line": 116,
-                    "column": 67
+                    "column": 69
                   }
                 }
               }
             ],
             "range": [
               3332,
-              3355
+              3357
             ],
             "loc": {
               "start": {
@@ -8167,13 +8167,13 @@
               },
               "end": {
                 "line": 116,
-                "column": 68
+                "column": 70
               }
             }
           },
           "range": [
             3316,
-            3355
+            3357
           ],
           "loc": {
             "start": {
@@ -8182,7 +8182,7 @@
             },
             "end": {
               "line": 116,
-              "column": 68
+              "column": 70
             }
           }
         }
@@ -8198,8 +8198,8 @@
                 "type": "Identifier",
                 "name": "usort",
                 "range": [
-                  3369,
-                  3374
+                  3371,
+                  3376
                 ],
                 "loc": {
                   "start": {
@@ -8225,8 +8225,8 @@
                         "type": "ArrayExpression",
                         "elements": [],
                         "range": [
-                          3376,
-                          3378
+                          3378,
+                          3380
                         ],
                         "loc": {
                           "start": {
@@ -8243,8 +8243,8 @@
                         "type": "Identifier",
                         "name": "concat",
                         "range": [
-                          3379,
-                          3385
+                          3381,
+                          3387
                         ],
                         "loc": {
                           "start": {
@@ -8258,8 +8258,8 @@
                         }
                       },
                       "range": [
-                        3376,
-                        3385
+                        3378,
+                        3387
                       ],
                       "loc": {
                         "start": {
@@ -8276,8 +8276,8 @@
                       "type": "Identifier",
                       "name": "apply",
                       "range": [
-                        3386,
-                        3391
+                        3388,
+                        3393
                       ],
                       "loc": {
                         "start": {
@@ -8291,8 +8291,8 @@
                       }
                     },
                     "range": [
-                      3376,
-                      3391
+                      3378,
+                      3393
                     ],
                     "loc": {
                       "start": {
@@ -8310,8 +8310,8 @@
                       "type": "ArrayExpression",
                       "elements": [],
                       "range": [
-                        3392,
-                        3394
+                        3394,
+                        3396
                       ],
                       "loc": {
                         "start": {
@@ -8333,8 +8333,8 @@
                           "type": "Identifier",
                           "name": "usage_presets",
                           "range": [
-                            3396,
-                            3409
+                            3398,
+                            3411
                           ],
                           "loc": {
                             "start": {
@@ -8351,8 +8351,8 @@
                           "type": "Identifier",
                           "name": "map",
                           "range": [
-                            3410,
-                            3413
+                            3412,
+                            3415
                           ],
                           "loc": {
                             "start": {
@@ -8366,8 +8366,8 @@
                           }
                         },
                         "range": [
-                          3396,
-                          3413
+                          3398,
+                          3415
                         ],
                         "loc": {
                           "start": {
@@ -8389,8 +8389,8 @@
                               "type": "Identifier",
                               "name": "scheme",
                               "range": [
-                                3414,
-                                3420
+                                3416,
+                                3422
                               ],
                               "loc": {
                                 "start": {
@@ -8410,8 +8410,8 @@
                               "type": "Identifier",
                               "name": "from_rgb",
                               "range": [
-                                3424,
-                                3432
+                                3426,
+                                3434
                               ],
                               "loc": {
                                 "start": {
@@ -8432,8 +8432,8 @@
                                   "type": "Identifier",
                                   "name": "color",
                                   "range": [
-                                    3433,
-                                    3438
+                                    3435,
+                                    3440
                                   ],
                                   "loc": {
                                     "start": {
@@ -8451,8 +8451,8 @@
                                   "value": "0088ff",
                                   "raw": "'0088ff'",
                                   "range": [
-                                    3442,
-                                    3450
+                                    3444,
+                                    3452
                                   ],
                                   "loc": {
                                     "start": {
@@ -8466,8 +8466,8 @@
                                   }
                                 },
                                 "range": [
-                                  3433,
-                                  3450
+                                  3435,
+                                  3452
                                 ],
                                 "loc": {
                                   "start": {
@@ -8484,8 +8484,8 @@
                                 "type": "Identifier",
                                 "name": "scheme",
                                 "range": [
-                                  3452,
-                                  3458
+                                  3454,
+                                  3460
                                 ],
                                 "loc": {
                                   "start": {
@@ -8500,8 +8500,8 @@
                               }
                             ],
                             "range": [
-                              3424,
-                              3459
+                              3426,
+                              3461
                             ],
                             "loc": {
                               "start": {
@@ -8517,8 +8517,8 @@
                           "generator": false,
                           "expression": true,
                           "range": [
-                            3414,
-                            3459
+                            3416,
+                            3461
                           ],
                           "loc": {
                             "start": {
@@ -8533,8 +8533,8 @@
                         }
                       ],
                       "range": [
-                        3396,
-                        3460
+                        3398,
+                        3462
                       ],
                       "loc": {
                         "start": {
@@ -8549,8 +8549,8 @@
                     }
                   ],
                   "range": [
-                    3376,
-                    3462
+                    3378,
+                    3464
                   ],
                   "loc": {
                     "start": {
@@ -8565,8 +8565,8 @@
                 }
               ],
               "range": [
-                3369,
-                3464
+                3371,
+                3466
               ],
               "loc": {
                 "start": {
@@ -8580,8 +8580,8 @@
               }
             },
             "range": [
-              3362,
-              3465
+              3364,
+              3467
             ],
             "loc": {
               "start": {
@@ -8596,13 +8596,13 @@
           }
         ],
         "range": [
-          3357,
-          3468
+          3359,
+          3470
         ],
         "loc": {
           "start": {
             "line": 116,
-            "column": 70
+            "column": 72
           },
           "end": {
             "line": 118,
@@ -8614,7 +8614,7 @@
       "expression": false,
       "range": [
         3287,
-        3468
+        3470
       ],
       "loc": {
         "start": {
@@ -8636,8 +8636,8 @@
         "type": "Identifier",
         "name": "many_swatches",
         "range": [
-          3485,
-          3498
+          3487,
+          3500
         ],
         "loc": {
           "start": {
@@ -8655,8 +8655,8 @@
           "type": "Identifier",
           "name": "color",
           "range": [
-            3499,
-            3504
+            3501,
+            3506
           ],
           "loc": {
             "start": {
@@ -8673,8 +8673,8 @@
           "type": "Identifier",
           "name": "usage_presets",
           "range": [
-            3506,
-            3519
+            3508,
+            3521
           ],
           "loc": {
             "start": {
@@ -8699,8 +8699,8 @@
                 "type": "Identifier",
                 "name": "make_swatches",
                 "range": [
-                  3533,
-                  3546
+                  3535,
+                  3548
                 ],
                 "loc": {
                   "start": {
@@ -8725,8 +8725,8 @@
                       },
                       "tail": false,
                       "range": [
-                        3547,
-                        3617
+                        3549,
+                        3619
                       ],
                       "loc": {
                         "start": {
@@ -8747,8 +8747,8 @@
                       },
                       "tail": false,
                       "range": [
-                        3622,
-                        3733
+                        3624,
+                        3735
                       ],
                       "loc": {
                         "start": {
@@ -8769,8 +8769,8 @@
                       },
                       "tail": true,
                       "range": [
-                        3738,
-                        3752
+                        3740,
+                        3754
                       ],
                       "loc": {
                         "start": {
@@ -8789,8 +8789,8 @@
                       "type": "Identifier",
                       "name": "color",
                       "range": [
-                        3617,
-                        3622
+                        3619,
+                        3624
                       ],
                       "loc": {
                         "start": {
@@ -8807,8 +8807,8 @@
                       "type": "Identifier",
                       "name": "color",
                       "range": [
-                        3733,
-                        3738
+                        3735,
+                        3740
                       ],
                       "loc": {
                         "start": {
@@ -8823,8 +8823,8 @@
                     }
                   ],
                   "range": [
-                    3547,
-                    3752
+                    3549,
+                    3754
                   ],
                   "loc": {
                     "start": {
@@ -8843,8 +8843,8 @@
                     "type": "Identifier",
                     "name": "many_matches",
                     "range": [
-                      3754,
-                      3766
+                      3756,
+                      3768
                     ],
                     "loc": {
                       "start": {
@@ -8862,8 +8862,8 @@
                       "type": "Identifier",
                       "name": "color",
                       "range": [
-                        3767,
-                        3772
+                        3769,
+                        3774
                       ],
                       "loc": {
                         "start": {
@@ -8880,8 +8880,8 @@
                       "type": "Identifier",
                       "name": "usage_presets",
                       "range": [
-                        3774,
-                        3787
+                        3776,
+                        3789
                       ],
                       "loc": {
                         "start": {
@@ -8896,8 +8896,8 @@
                     }
                   ],
                   "range": [
-                    3754,
-                    3788
+                    3756,
+                    3790
                   ],
                   "loc": {
                     "start": {
@@ -8912,8 +8912,8 @@
                 }
               ],
               "range": [
-                3533,
-                3789
+                3535,
+                3791
               ],
               "loc": {
                 "start": {
@@ -8927,8 +8927,8 @@
               }
             },
             "range": [
-              3526,
-              3790
+              3528,
+              3792
             ],
             "loc": {
               "start": {
@@ -8943,8 +8943,8 @@
           }
         ],
         "range": [
-          3521,
-          3793
+          3523,
+          3795
         ],
         "loc": {
           "start": {
@@ -8960,8 +8960,8 @@
       "generator": false,
       "expression": false,
       "range": [
-        3476,
-        3793
+        3478,
+        3795
       ],
       "loc": {
         "start": {
@@ -8987,8 +8987,8 @@
             "type": "Identifier",
             "name": "rotate",
             "range": [
-              3809,
-              3815
+              3811,
+              3817
             ],
             "loc": {
               "start": {
@@ -9005,8 +9005,8 @@
             "type": "Identifier",
             "name": "rotate",
             "range": [
-              3809,
-              3815
+              3811,
+              3817
             ],
             "loc": {
               "start": {
@@ -9020,8 +9020,8 @@
             }
           },
           "range": [
-            3809,
-            3815
+            3811,
+            3817
           ],
           "loc": {
             "start": {
@@ -9040,8 +9040,8 @@
             "type": "Identifier",
             "name": "from_rgb",
             "range": [
-              3817,
-              3825
+              3819,
+              3827
             ],
             "loc": {
               "start": {
@@ -9058,8 +9058,8 @@
             "type": "Identifier",
             "name": "from_rgb",
             "range": [
-              3817,
-              3825
+              3819,
+              3827
             ],
             "loc": {
               "start": {
@@ -9073,8 +9073,8 @@
             }
           },
           "range": [
-            3817,
-            3825
+            3819,
+            3827
           ],
           "loc": {
             "start": {
@@ -9093,8 +9093,8 @@
             "type": "Identifier",
             "name": "presets",
             "range": [
-              3827,
-              3834
+              3829,
+              3836
             ],
             "loc": {
               "start": {
@@ -9111,8 +9111,8 @@
             "type": "Identifier",
             "name": "presets",
             "range": [
-              3827,
-              3834
+              3829,
+              3836
             ],
             "loc": {
               "start": {
@@ -9126,8 +9126,8 @@
             }
           },
           "range": [
-            3827,
-            3834
+            3829,
+            3836
           ],
           "loc": {
             "start": {
@@ -9146,8 +9146,8 @@
             "type": "Identifier",
             "name": "husl",
             "range": [
-              3836,
-              3840
+              3838,
+              3842
             ],
             "loc": {
               "start": {
@@ -9164,8 +9164,8 @@
             "type": "Identifier",
             "name": "husl",
             "range": [
-              3836,
-              3840
+              3838,
+              3842
             ],
             "loc": {
               "start": {
@@ -9179,8 +9179,8 @@
             }
           },
           "range": [
-            3836,
-            3840
+            3838,
+            3842
           ],
           "loc": {
             "start": {
@@ -9199,8 +9199,8 @@
             "type": "Identifier",
             "name": "hsl_interval_to_rgb",
             "range": [
-              3842,
-              3861
+              3844,
+              3863
             ],
             "loc": {
               "start": {
@@ -9217,8 +9217,8 @@
             "type": "Identifier",
             "name": "hsl_interval_to_rgb",
             "range": [
-              3842,
-              3861
+              3844,
+              3863
             ],
             "loc": {
               "start": {
@@ -9232,8 +9232,8 @@
             }
           },
           "range": [
-            3842,
-            3861
+            3844,
+            3863
           ],
           "loc": {
             "start": {
@@ -9252,8 +9252,8 @@
             "type": "Identifier",
             "name": "make_swatches",
             "range": [
-              3863,
-              3876
+              3865,
+              3878
             ],
             "loc": {
               "start": {
@@ -9270,8 +9270,8 @@
             "type": "Identifier",
             "name": "make_swatches",
             "range": [
-              3863,
-              3876
+              3865,
+              3878
             ],
             "loc": {
               "start": {
@@ -9285,8 +9285,8 @@
             }
           },
           "range": [
-            3863,
-            3876
+            3865,
+            3878
           ],
           "loc": {
             "start": {
@@ -9305,8 +9305,8 @@
             "type": "Identifier",
             "name": "make_all_swatches",
             "range": [
-              3878,
-              3895
+              3880,
+              3897
             ],
             "loc": {
               "start": {
@@ -9323,8 +9323,8 @@
             "type": "Identifier",
             "name": "make_all_swatches",
             "range": [
-              3878,
-              3895
+              3880,
+              3897
             ],
             "loc": {
               "start": {
@@ -9338,8 +9338,8 @@
             }
           },
           "range": [
-            3878,
-            3895
+            3880,
+            3897
           ],
           "loc": {
             "start": {
@@ -9358,8 +9358,8 @@
             "type": "Identifier",
             "name": "usort",
             "range": [
-              3897,
-              3902
+              3899,
+              3904
             ],
             "loc": {
               "start": {
@@ -9376,8 +9376,8 @@
             "type": "Identifier",
             "name": "usort",
             "range": [
-              3897,
-              3902
+              3899,
+              3904
             ],
             "loc": {
               "start": {
@@ -9391,8 +9391,8 @@
             }
           },
           "range": [
-            3897,
-            3902
+            3899,
+            3904
           ],
           "loc": {
             "start": {
@@ -9411,8 +9411,8 @@
             "type": "Identifier",
             "name": "many_matches",
             "range": [
-              3904,
-              3916
+              3906,
+              3918
             ],
             "loc": {
               "start": {
@@ -9429,8 +9429,8 @@
             "type": "Identifier",
             "name": "many_matches",
             "range": [
-              3904,
-              3916
+              3906,
+              3918
             ],
             "loc": {
               "start": {
@@ -9444,8 +9444,8 @@
             }
           },
           "range": [
-            3904,
-            3916
+            3906,
+            3918
           ],
           "loc": {
             "start": {
@@ -9464,8 +9464,8 @@
             "type": "Identifier",
             "name": "many_swatches",
             "range": [
-              3918,
-              3931
+              3920,
+              3933
             ],
             "loc": {
               "start": {
@@ -9482,8 +9482,8 @@
             "type": "Identifier",
             "name": "many_swatches",
             "range": [
-              3918,
-              3931
+              3920,
+              3933
             ],
             "loc": {
               "start": {
@@ -9497,8 +9497,8 @@
             }
           },
           "range": [
-            3918,
-            3931
+            3920,
+            3933
           ],
           "loc": {
             "start": {
@@ -9514,8 +9514,8 @@
       ],
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -9920,8 +9920,8 @@
       "specifiers": null,
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -10983,8 +10983,8 @@
       "specifiers": null,
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -12112,8 +12112,8 @@
                   "type": "Property",
                   "key": {
                     "type": "Literal",
-                    "value": "pentagon",
-                    "raw": "'pentagon'",
+                    "value": "l-tetrad",
+                    "raw": "'l-tetrad'",
                     "range": [
                       913,
                       923
@@ -12153,16 +12153,16 @@
                       },
                       {
                         "type": "Literal",
-                        "value": 72,
-                        "raw": "72",
+                        "value": 300,
+                        "raw": "300",
                         "range": [
-                          950,
+                          949,
                           952
                         ],
                         "loc": {
                           "start": {
                             "line": 24,
-                            "column": 39
+                            "column": 38
                           },
                           "end": {
                             "line": 24,
@@ -12172,8 +12172,8 @@
                       },
                       {
                         "type": "Literal",
-                        "value": 144,
-                        "raw": "144",
+                        "value": 180,
+                        "raw": "180",
                         "range": [
                           955,
                           958
@@ -12191,8 +12191,8 @@
                       },
                       {
                         "type": "Literal",
-                        "value": 216,
-                        "raw": "216",
+                        "value": 120,
+                        "raw": "120",
                         "range": [
                           961,
                           964
@@ -12205,25 +12205,6 @@
                           "end": {
                             "line": 24,
                             "column": 53
-                          }
-                        }
-                      },
-                      {
-                        "type": "Literal",
-                        "value": 288,
-                        "raw": "288",
-                        "range": [
-                          967,
-                          970
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 24,
-                            "column": 56
-                          },
-                          "end": {
-                            "line": 24,
-                            "column": 59
                           }
                         }
                       }
@@ -12266,11 +12247,11 @@
                   "type": "Property",
                   "key": {
                     "type": "Literal",
-                    "value": "hexagon",
-                    "raw": "'hexagon'",
+                    "value": "pentagon",
+                    "raw": "'pentagon'",
                     "range": [
                       989,
-                      998
+                      999
                     ],
                     "loc": {
                       "start": {
@@ -12279,7 +12260,7 @@
                       },
                       "end": {
                         "line": 25,
-                        "column": 11
+                        "column": 12
                       }
                     }
                   },
@@ -12307,8 +12288,8 @@
                       },
                       {
                         "type": "Literal",
-                        "value": 60,
-                        "raw": "60",
+                        "value": 72,
+                        "raw": "72",
                         "range": [
                           1026,
                           1028
@@ -12326,8 +12307,8 @@
                       },
                       {
                         "type": "Literal",
-                        "value": 120,
-                        "raw": "120",
+                        "value": 144,
+                        "raw": "144",
                         "range": [
                           1031,
                           1034
@@ -12345,8 +12326,8 @@
                       },
                       {
                         "type": "Literal",
-                        "value": 180,
-                        "raw": "180",
+                        "value": 216,
+                        "raw": "216",
                         "range": [
                           1037,
                           1040
@@ -12364,8 +12345,8 @@
                       },
                       {
                         "type": "Literal",
-                        "value": 240,
-                        "raw": "240",
+                        "value": 288,
+                        "raw": "288",
                         "range": [
                           1043,
                           1046
@@ -12378,25 +12359,6 @@
                           "end": {
                             "line": 25,
                             "column": 59
-                          }
-                        }
-                      },
-                      {
-                        "type": "Literal",
-                        "value": 300,
-                        "raw": "300",
-                        "range": [
-                          1049,
-                          1052
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 25,
-                            "column": 62
-                          },
-                          "end": {
-                            "line": 25,
-                            "column": 65
                           }
                         }
                       }
@@ -12439,11 +12401,11 @@
                   "type": "Property",
                   "key": {
                     "type": "Literal",
-                    "value": "l-tetrad",
-                    "raw": "'l-tetrad'",
+                    "value": "hexagon",
+                    "raw": "'hexagon'",
                     "range": [
                       1065,
-                      1075
+                      1074
                     ],
                     "loc": {
                       "start": {
@@ -12452,7 +12414,7 @@
                       },
                       "end": {
                         "line": 26,
-                        "column": 12
+                        "column": 11
                       }
                     }
                   },
@@ -12480,16 +12442,16 @@
                       },
                       {
                         "type": "Literal",
-                        "value": 300,
-                        "raw": "300",
+                        "value": 60,
+                        "raw": "60",
                         "range": [
-                          1101,
+                          1102,
                           1104
                         ],
                         "loc": {
                           "start": {
                             "line": 26,
-                            "column": 38
+                            "column": 39
                           },
                           "end": {
                             "line": 26,
@@ -12499,8 +12461,8 @@
                       },
                       {
                         "type": "Literal",
-                        "value": 180,
-                        "raw": "180",
+                        "value": 120,
+                        "raw": "120",
                         "range": [
                           1107,
                           1110
@@ -12518,8 +12480,8 @@
                       },
                       {
                         "type": "Literal",
-                        "value": 120,
-                        "raw": "120",
+                        "value": 180,
+                        "raw": "180",
                         "range": [
                           1113,
                           1116
@@ -12532,6 +12494,44 @@
                           "end": {
                             "line": 26,
                             "column": 53
+                          }
+                        }
+                      },
+                      {
+                        "type": "Literal",
+                        "value": 240,
+                        "raw": "240",
+                        "range": [
+                          1119,
+                          1122
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 26,
+                            "column": 56
+                          },
+                          "end": {
+                            "line": 26,
+                            "column": 59
+                          }
+                        }
+                      },
+                      {
+                        "type": "Literal",
+                        "value": 300,
+                        "raw": "300",
+                        "range": [
+                          1125,
+                          1128
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 26,
+                            "column": 62
+                          },
+                          "end": {
+                            "line": 26,
+                            "column": 65
                           }
                         }
                       }
@@ -13258,8 +13258,8 @@
       "specifiers": null,
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -13410,8 +13410,8 @@
       "specifiers": null,
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -13820,8 +13820,8 @@
       "specifiers": null,
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -16645,8 +16645,8 @@
       "specifiers": null,
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -17291,8 +17291,8 @@
       "specifiers": null,
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -17682,8 +17682,8 @@
       "specifiers": null,
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -17763,11 +17763,11 @@
               "elements": [
                 {
                   "type": "Literal",
-                  "value": "analogous",
-                  "raw": "'analogous'",
+                  "value": "analogous-5",
+                  "raw": "'analogous-5'",
                   "range": [
                     3333,
-                    3344
+                    3346
                   ],
                   "loc": {
                     "start": {
@@ -17776,7 +17776,7 @@
                     },
                     "end": {
                       "line": 116,
-                      "column": 57
+                      "column": 59
                     }
                   }
                 },
@@ -17785,24 +17785,24 @@
                   "value": "square",
                   "raw": "'square'",
                   "range": [
-                    3346,
-                    3354
+                    3348,
+                    3356
                   ],
                   "loc": {
                     "start": {
                       "line": 116,
-                      "column": 59
+                      "column": 61
                     },
                     "end": {
                       "line": 116,
-                      "column": 67
+                      "column": 69
                     }
                   }
                 }
               ],
               "range": [
                 3332,
-                3355
+                3357
               ],
               "loc": {
                 "start": {
@@ -17811,13 +17811,13 @@
                 },
                 "end": {
                   "line": 116,
-                  "column": 68
+                  "column": 70
                 }
               }
             },
             "range": [
               3316,
-              3355
+              3357
             ],
             "loc": {
               "start": {
@@ -17826,7 +17826,7 @@
               },
               "end": {
                 "line": 116,
-                "column": 68
+                "column": 70
               }
             }
           }
@@ -17842,8 +17842,8 @@
                   "type": "Identifier",
                   "name": "usort",
                   "range": [
-                    3369,
-                    3374
+                    3371,
+                    3376
                   ],
                   "loc": {
                     "start": {
@@ -17869,8 +17869,8 @@
                           "type": "ArrayExpression",
                           "elements": [],
                           "range": [
-                            3376,
-                            3378
+                            3378,
+                            3380
                           ],
                           "loc": {
                             "start": {
@@ -17887,8 +17887,8 @@
                           "type": "Identifier",
                           "name": "concat",
                           "range": [
-                            3379,
-                            3385
+                            3381,
+                            3387
                           ],
                           "loc": {
                             "start": {
@@ -17902,8 +17902,8 @@
                           }
                         },
                         "range": [
-                          3376,
-                          3385
+                          3378,
+                          3387
                         ],
                         "loc": {
                           "start": {
@@ -17920,8 +17920,8 @@
                         "type": "Identifier",
                         "name": "apply",
                         "range": [
-                          3386,
-                          3391
+                          3388,
+                          3393
                         ],
                         "loc": {
                           "start": {
@@ -17935,8 +17935,8 @@
                         }
                       },
                       "range": [
-                        3376,
-                        3391
+                        3378,
+                        3393
                       ],
                       "loc": {
                         "start": {
@@ -17954,8 +17954,8 @@
                         "type": "ArrayExpression",
                         "elements": [],
                         "range": [
-                          3392,
-                          3394
+                          3394,
+                          3396
                         ],
                         "loc": {
                           "start": {
@@ -17977,8 +17977,8 @@
                             "type": "Identifier",
                             "name": "usage_presets",
                             "range": [
-                              3396,
-                              3409
+                              3398,
+                              3411
                             ],
                             "loc": {
                               "start": {
@@ -17995,8 +17995,8 @@
                             "type": "Identifier",
                             "name": "map",
                             "range": [
-                              3410,
-                              3413
+                              3412,
+                              3415
                             ],
                             "loc": {
                               "start": {
@@ -18010,8 +18010,8 @@
                             }
                           },
                           "range": [
-                            3396,
-                            3413
+                            3398,
+                            3415
                           ],
                           "loc": {
                             "start": {
@@ -18033,8 +18033,8 @@
                                 "type": "Identifier",
                                 "name": "scheme",
                                 "range": [
-                                  3414,
-                                  3420
+                                  3416,
+                                  3422
                                 ],
                                 "loc": {
                                   "start": {
@@ -18054,8 +18054,8 @@
                                 "type": "Identifier",
                                 "name": "from_rgb",
                                 "range": [
-                                  3424,
-                                  3432
+                                  3426,
+                                  3434
                                 ],
                                 "loc": {
                                   "start": {
@@ -18076,8 +18076,8 @@
                                     "type": "Identifier",
                                     "name": "color",
                                     "range": [
-                                      3433,
-                                      3438
+                                      3435,
+                                      3440
                                     ],
                                     "loc": {
                                       "start": {
@@ -18095,8 +18095,8 @@
                                     "value": "0088ff",
                                     "raw": "'0088ff'",
                                     "range": [
-                                      3442,
-                                      3450
+                                      3444,
+                                      3452
                                     ],
                                     "loc": {
                                       "start": {
@@ -18110,8 +18110,8 @@
                                     }
                                   },
                                   "range": [
-                                    3433,
-                                    3450
+                                    3435,
+                                    3452
                                   ],
                                   "loc": {
                                     "start": {
@@ -18128,8 +18128,8 @@
                                   "type": "Identifier",
                                   "name": "scheme",
                                   "range": [
-                                    3452,
-                                    3458
+                                    3454,
+                                    3460
                                   ],
                                   "loc": {
                                     "start": {
@@ -18144,8 +18144,8 @@
                                 }
                               ],
                               "range": [
-                                3424,
-                                3459
+                                3426,
+                                3461
                               ],
                               "loc": {
                                 "start": {
@@ -18161,8 +18161,8 @@
                             "generator": false,
                             "expression": true,
                             "range": [
-                              3414,
-                              3459
+                              3416,
+                              3461
                             ],
                             "loc": {
                               "start": {
@@ -18177,8 +18177,8 @@
                           }
                         ],
                         "range": [
-                          3396,
-                          3460
+                          3398,
+                          3462
                         ],
                         "loc": {
                           "start": {
@@ -18193,8 +18193,8 @@
                       }
                     ],
                     "range": [
-                      3376,
-                      3462
+                      3378,
+                      3464
                     ],
                     "loc": {
                       "start": {
@@ -18209,8 +18209,8 @@
                   }
                 ],
                 "range": [
-                  3369,
-                  3464
+                  3371,
+                  3466
                 ],
                 "loc": {
                   "start": {
@@ -18224,8 +18224,8 @@
                 }
               },
               "range": [
-                3362,
-                3465
+                3364,
+                3467
               ],
               "loc": {
                 "start": {
@@ -18240,13 +18240,13 @@
             }
           ],
           "range": [
-            3357,
-            3468
+            3359,
+            3470
           ],
           "loc": {
             "start": {
               "line": 116,
-              "column": 70
+              "column": 72
             },
             "end": {
               "line": 118,
@@ -18258,7 +18258,7 @@
         "expression": false,
         "range": [
           3287,
-          3468
+          3470
         ],
         "loc": {
           "start": {
@@ -18276,8 +18276,8 @@
       "specifiers": null,
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -18299,8 +18299,8 @@
           "type": "Identifier",
           "name": "many_swatches",
           "range": [
-            3485,
-            3498
+            3487,
+            3500
           ],
           "loc": {
             "start": {
@@ -18318,8 +18318,8 @@
             "type": "Identifier",
             "name": "color",
             "range": [
-              3499,
-              3504
+              3501,
+              3506
             ],
             "loc": {
               "start": {
@@ -18336,8 +18336,8 @@
             "type": "Identifier",
             "name": "usage_presets",
             "range": [
-              3506,
-              3519
+              3508,
+              3521
             ],
             "loc": {
               "start": {
@@ -18362,8 +18362,8 @@
                   "type": "Identifier",
                   "name": "make_swatches",
                   "range": [
-                    3533,
-                    3546
+                    3535,
+                    3548
                   ],
                   "loc": {
                     "start": {
@@ -18388,8 +18388,8 @@
                         },
                         "tail": false,
                         "range": [
-                          3547,
-                          3617
+                          3549,
+                          3619
                         ],
                         "loc": {
                           "start": {
@@ -18410,8 +18410,8 @@
                         },
                         "tail": false,
                         "range": [
-                          3622,
-                          3733
+                          3624,
+                          3735
                         ],
                         "loc": {
                           "start": {
@@ -18432,8 +18432,8 @@
                         },
                         "tail": true,
                         "range": [
-                          3738,
-                          3752
+                          3740,
+                          3754
                         ],
                         "loc": {
                           "start": {
@@ -18452,8 +18452,8 @@
                         "type": "Identifier",
                         "name": "color",
                         "range": [
-                          3617,
-                          3622
+                          3619,
+                          3624
                         ],
                         "loc": {
                           "start": {
@@ -18470,8 +18470,8 @@
                         "type": "Identifier",
                         "name": "color",
                         "range": [
-                          3733,
-                          3738
+                          3735,
+                          3740
                         ],
                         "loc": {
                           "start": {
@@ -18486,8 +18486,8 @@
                       }
                     ],
                     "range": [
-                      3547,
-                      3752
+                      3549,
+                      3754
                     ],
                     "loc": {
                       "start": {
@@ -18506,8 +18506,8 @@
                       "type": "Identifier",
                       "name": "many_matches",
                       "range": [
-                        3754,
-                        3766
+                        3756,
+                        3768
                       ],
                       "loc": {
                         "start": {
@@ -18525,8 +18525,8 @@
                         "type": "Identifier",
                         "name": "color",
                         "range": [
-                          3767,
-                          3772
+                          3769,
+                          3774
                         ],
                         "loc": {
                           "start": {
@@ -18543,8 +18543,8 @@
                         "type": "Identifier",
                         "name": "usage_presets",
                         "range": [
-                          3774,
-                          3787
+                          3776,
+                          3789
                         ],
                         "loc": {
                           "start": {
@@ -18559,8 +18559,8 @@
                       }
                     ],
                     "range": [
-                      3754,
-                      3788
+                      3756,
+                      3790
                     ],
                     "loc": {
                       "start": {
@@ -18575,8 +18575,8 @@
                   }
                 ],
                 "range": [
-                  3533,
-                  3789
+                  3535,
+                  3791
                 ],
                 "loc": {
                   "start": {
@@ -18590,8 +18590,8 @@
                 }
               },
               "range": [
-                3526,
-                3790
+                3528,
+                3792
               ],
               "loc": {
                 "start": {
@@ -18606,8 +18606,8 @@
             }
           ],
           "range": [
-            3521,
-            3793
+            3523,
+            3795
           ],
           "loc": {
             "start": {
@@ -18623,8 +18623,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          3476,
-          3793
+          3478,
+          3795
         ],
         "loc": {
           "start": {
@@ -18642,8 +18642,8 @@
       "specifiers": null,
       "source": null,
       "range": [
-        3801,
-        3933
+        3803,
+        3935
       ],
       "loc": {
         "start": {
@@ -18661,7 +18661,7 @@
   "sourceType": "module",
   "range": [
     2,
-    3933
+    3935
   ],
   "loc": {
     "start": {

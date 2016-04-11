@@ -2,7 +2,23 @@
 <html>
 
   <head>
-    <script type="text/javascript" src="husl_harmony.es5.browserified.js"></script>
+ 
+    <script defer type="text/javascript" src="husl_harmony.es5.browserified.js"></script>
+
+    <script defer type="text/javascript">
+
+      window.onload = function() { 
+
+        var husl_harmony = require('husl_harmony'),
+            swatch_div   = husl_harmony.make_all_swatches('#3D7AFA');
+
+        document.body.innerHTML = '<h1>All swatch sets matching <tt>#3D7AFA</tt></h1>';
+        document.body.appendChild(swatch_div); 
+
+      }
+
+    </script>
+ 
   </head>
 
   <body>

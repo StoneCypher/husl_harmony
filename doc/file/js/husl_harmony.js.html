@@ -70,9 +70,9 @@ var presets = {
   &apos;complementary-triad&apos;     : [   0,  120,  180,  240                   ],
   &apos;square&apos;                  : [   0,   90,  180,  270                   ],
   &apos;tetrad&apos;                  : [   0,   60,  180,  240                   ],
+  &apos;l-tetrad&apos;                : [   0,  300,  180,  120                   ],
   &apos;pentagon&apos;                : [   0,   72,  144,  216,  288             ],
   &apos;hexagon&apos;                 : [   0,   60,  120,  180,  240,  300       ],
-  &apos;l-tetrad&apos;                : [   0,  300,  180,  120                   ],
   &apos;analogous-3&apos;             : [ 330,    0,   30                         ],
   &apos;analogous-5&apos;             : [ 300,  330,    0,   30,   60             ],
   &apos;analogous-7&apos;             : [ 270,  300,  330,    0,   30,   60,   90 ],
@@ -162,7 +162,7 @@ function usort(uarray) {
 
 
 
-function many_matches(color, usage_presets = [&apos;analogous&apos;, &apos;square&apos;]) {
+function many_matches(color, usage_presets = [&apos;analogous-5&apos;, &apos;square&apos;]) {
   return usort( [].concat.apply([], usage_presets.map(scheme =&gt; from_rgb(color || &apos;0088ff&apos;, scheme)) ) );
 }
 

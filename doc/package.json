@@ -1,6 +1,6 @@
 {
   "name": "husl_harmony",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "description": "Generate more effective color harmonies with HUSL",
   "main": "dist/husl_harmony.es5.js",
   "scripts": {
@@ -19,7 +19,12 @@
     "scheme",
     "theme",
     "husl",
-    "hsl"
+    "hsl",
+    "square",
+    "pentagon",
+    "analogous",
+    "complementary",
+    "monochromatic"
   ],
   "author": "John Haugeland <stonecypher@gmail.com>",
   "license": "MIT",
