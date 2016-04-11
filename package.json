@@ -1,6 +1,6 @@
 {
   "name": "husl_harmony",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Generate more effective color harmonies with HUSL",
   "main": "dist/husl_harmony.es5.js",
   "scripts": {
